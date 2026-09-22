@@ -41,6 +41,11 @@
         <picklistObject>Case</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>fmBaseURL</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_600}, FIND( &apos;/services&apos;, {!$Api.Partner_Server_URL_600}))</expression>
+    </formulas>
     <interviewLabel>Screen:Create Case Record Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Screen:Create Case Record Flow</label>
     <processMetadataValues>
@@ -253,6 +258,12 @@
                     <stringValue>ContactId</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -311,7 +322,7 @@
         </connector>
         <fields>
             <name>casesuccessMessage</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 18px; font-family: verdana;&quot;&gt;Your Case with the Subject &quot;{!Subject}&quot; has been created Successfully.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 18px; font-family: verdana;&quot;&gt;Click Here to Visit the Record.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px; font-family: verdana; background-color: rgb(255, 255, 255);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;{!Create_a_Case_Record}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: verdana; font-size: 18px; color: rgb(9, 241, 24);&quot;&gt;Your Case with the Subject &quot;{!Subject}&quot; has been created Successfully.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: verdana; font-size: 18px; color: rgb(9, 241, 24);&quot;&gt;Click &lt;/span&gt;&lt;a href=&quot;{!fmBaseURL}{!Create_a_Case_Record.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: verdana; font-size: 18px; color: rgb(9, 241, 24);&quot;&gt;Here&lt;/a&gt;&lt;span style=&quot;font-family: verdana; font-size: 18px; color: rgb(9, 241, 24);&quot;&gt; to Visit the Record.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -332,5 +343,12 @@
             <targetReference>Case_Creation</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
