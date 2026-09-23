@@ -179,5 +179,5 @@
             <targetReference>Provide_Case_Number</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>
