@@ -17,6 +17,9 @@
                 <collectionElements>
                     <elementReference>varEmailCollectionList</elementReference>
                 </collectionElements>
+                <collectionElements>
+                    <stringValue>adi.phadke9@gmail.com</stringValue>
+                </collectionElements>
             </value>
         </inputParameters>
         <inputParameters>
@@ -156,7 +159,7 @@
             <targetReference>Create_Task_Record</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>taskDescription</name>
         <dataType>String</dataType>
