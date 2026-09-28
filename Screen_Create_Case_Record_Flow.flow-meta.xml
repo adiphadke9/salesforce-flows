@@ -479,6 +479,9 @@
         <label>Create Task Send Email on Error</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Log_Error_Message_on_System_Event_Object</targetReference>
+        </connector>
         <flowName>Subflow_Create_Task_Send_Email_on_Error</flowName>
         <inputAssignments>
             <name>taskDescription</name>
@@ -510,6 +513,50 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Log_Error_Message_on_System_Event_Object</name>
+        <label>Log Error Message on System Event Object</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>Auto_Log_Error_Message_on_System_Event_Object</flowName>
+        <inputAssignments>
+            <name>varComponentName</name>
+            <value>
+                <stringValue>Screen:Create Case Record Flow   - V4</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varComponentType</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varErrorMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varFlowStepName</name>
+            <value>
+                <stringValue>Create Contact Record</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varTitle</name>
+            <value>
+                <stringValue>Error While Create Contact Record</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varUser</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <variables>
         <name>recordId</name>
