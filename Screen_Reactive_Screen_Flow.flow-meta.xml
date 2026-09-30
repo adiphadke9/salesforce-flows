@@ -255,7 +255,7 @@
             <targetReference>Get_All_Open_Cases</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Task_Send_Email_on_Error</name>
         <label>Create Task Send Email on Error</label>
