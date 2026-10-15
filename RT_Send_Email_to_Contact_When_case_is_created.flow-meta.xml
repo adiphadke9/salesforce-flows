@@ -7,9 +7,6 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -75,9 +72,6 @@ Case Number : {!$Record.CaseNumber}</stringValue>
         <label>Contact Should Not Be Blank</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>contact_is_associated</name>
@@ -102,11 +96,6 @@ Case Number : {!$Record.CaseNumber}</stringValue>
             <label>contact is associated</label>
         </rules>
     </decisions>
-    <ends>
-        <name>END_ELEMENT_1</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>RTL {!$Flow.CurrentDateTime}</interviewLabel>
     <label>RT:Send Email to Contact When case is created</label>
